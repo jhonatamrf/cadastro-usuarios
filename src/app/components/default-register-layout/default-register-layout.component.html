@@ -6,10 +6,6 @@
         <img src="/assets/img/logo-first-decision.webp" alt="Logo First Decision">
         <h2>{{ title }}</h2>
         <ng-content></ng-content>
-        <input type="name" name="name" placeholder="Seu nome">
-        <input type="email" name="email" placeholder="Seu email">
-        <input type="password" name="password" placeholder="Digite uma senha">
-        <input type="password" name="confPpassword" placeholder="Confirme a senha">
-        <button>{{ registerBtnText }}</button>
+        <button (click)="submit()">{{ registerBtnText }}</button>
     </section>
 </main>

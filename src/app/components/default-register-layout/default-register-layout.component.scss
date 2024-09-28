@@ -6,10 +6,6 @@ main{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
-    ::placeholder{
-        color: $text-color2;
-    }
 
     section{
         height: 100vh;
@@ -21,7 +17,11 @@ main{
 
     .main-section{
         flex-grow: 1;
-        background-color: $primary-color;
+        background-color: $secondary-color;
+
+        img{
+            width: 30%;
+        }
     }
 
     .form-section{
@@ -33,39 +33,24 @@ main{
             margin: 20px 0;
             font-size: 1.5em;
             font-weight: bold;
-            font-family: Arial, Helvetica, sans-serif;
         }
 
-        input{
+        button{        
             width: 100%;
-            margin-top: 10px;
-            padding: 15px;
             font-size: 18px;
-            border: none;
             border-radius: 5px;
-            background: $secondary-color;
-            outline: none;
-            border-bottom: 3px solid #dee3f9;
-        }
-
-        input:focus{
-            border-bottom: 3px solid $primary-color;
-        }
-
-        button{
-            width: 100%;
-            padding: 15px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
+            padding: 14px 20px;
             background-color: $primary-color;
             color: $white-color;
-            font-size: 18px;
             cursor: pointer;
+            border-radius: 5px;
+            border: none;
         }
         button:hover{
-            background-color: $primary-color;
+            background-color: $third-color;
+            transition: 0.4s;
         }
+
     }
 
 }

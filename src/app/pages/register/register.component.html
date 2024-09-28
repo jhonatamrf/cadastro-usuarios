@@ -1,8 +1,44 @@
 <app-default-register-layout
     title="Cadasto de Usuário"
     registerBtnText="Cadastrar"
+    (submit)="submit()"
 >
     <form [formGroup]="registerForm">
-
+        <app-primary-input
+            formControlName="name"
+            inputName="name"
+            type="text"
+            label="Nome"
+            placeholder="Digite seu nome"
+        >
+            <img src="/assets/img/icon-user.svg" />
+        </app-primary-input>
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="Digite seu email"
+        >
+            <img src="/assets/img/icon-arroba.svg" />
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Senha"
+            placeholder="Digite uma senha"
+        >
+            <img src="/assets/img/icon-key.svg" />
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="confPassword"
+            type="password"
+            label="Confirmar Senha"
+            placeholder="Confirme a senha"
+        >
+            <img src="/assets/img/icon-key.svg" />
+        </app-primary-input>
     </form>
 </app-default-register-layout>
