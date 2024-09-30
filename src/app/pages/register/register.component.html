@@ -2,6 +2,7 @@
     title="Cadasto de Usuário"
     registerBtnText="Cadastrar"
     (submit)="submit()"
+    [disableRegisterBtn]="!registerForm.valid"
 >
     <form [formGroup]="registerForm">
         <app-primary-input
@@ -32,8 +33,8 @@
             <img src="/assets/img/icon-key.svg" />
         </app-primary-input>
         <app-primary-input
-            formControlName="password"
-            inputName="confPassword"
+            formControlName="confirmPassword"
+            inputName="confirmPassword"
             type="password"
             label="Confirmar Senha"
             placeholder="Confirme a senha"

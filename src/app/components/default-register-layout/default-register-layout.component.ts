@@ -10,6 +10,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class DefaultRegisterLayoutComponent {
   @Input() title: string = "";
   @Input() registerBtnText: string = "";
+  @Input() disableRegisterBtn: boolean = true;
   @Output("submit") onSubmit = new EventEmitter();
 
   submit(){

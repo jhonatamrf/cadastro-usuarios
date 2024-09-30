@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
 import { RegisterService } from '../../service/register.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -25,13 +26,15 @@ export class RegisterComponent {
 
   constructor(
     private router: Router,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private toastService: ToastrService
 
   ){
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)])
+      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
+      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)])
     })
   }
 
@@ -39,11 +42,12 @@ export class RegisterComponent {
     this.registerService.register(
       this.registerForm.value.name,
       this.registerForm.value.email,
-      this.registerForm.value.password
+      this.registerForm.value.password,
+      this.registerForm.value.confirmPassword
     ).subscribe(
       {
-        next: () => console.log("sucesso"),
-        error: () => console.log("error")
+        next: () => this.toastService.success("Cadastro feito com sucesso!"),
+        error: () => this.toastService.error("Ops!, algo inesperado aconteceu. Tente novamente em alguns instantes!")
       }
     )
   }

@@ -27,7 +27,7 @@ main{
     .form-section{
         flex-grow: 0.3;
         background-color: $white-color;
-        padding: 40px;
+        padding: 80px;
 
         h2{
             margin: 20px 0;
@@ -45,10 +45,16 @@ main{
             cursor: pointer;
             border-radius: 5px;
             border: none;
-        }
-        button:hover{
-            background-color: $third-color;
-            transition: 0.4s;
+
+            // &:hover{
+            //     background-color: $third-color;
+            //     transition: 0.4s;
+            // }
+
+            &:disabled{
+                opacity: 0.5;
+                cursor: initial;
+            }
         }
 
     }

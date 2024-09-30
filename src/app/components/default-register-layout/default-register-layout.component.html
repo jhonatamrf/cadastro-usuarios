@@ -6,6 +6,11 @@
         <img src="/assets/img/logo-first-decision.webp" alt="Logo First Decision">
         <h2>{{ title }}</h2>
         <ng-content></ng-content>
-        <button (click)="submit()">{{ registerBtnText }}</button>
+        <button 
+            (click)="submit()"
+            [disabled]="disableRegisterBtn"
+        >
+            {{ registerBtnText }}
+        </button>
     </section>
 </main>
